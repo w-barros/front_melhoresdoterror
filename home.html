@@ -10,9 +10,20 @@
 		integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
 	<style>
-
 		.tudo_background {
 			background-color: #162022;
+		}
+
+		.cardbg {
+			filter: brightness(50%);
+		}
+
+		#jumbo-bg {
+			background-image: url(https://64.media.tumblr.com/tumblr_maolcpnQS61qakj1do1_500.gif); 
+			background-size: cover;
+			
+	
+
 		}
 	</style>
 
@@ -48,7 +59,7 @@
 
 		<!-- Jumbotron -->
 		<div class="container py-4">
-			<div class="p-5 mb-4 rounded-3 bg-dark text-light">
+			<div class="p-5 mb-4 rounded-3 bg-dark text-light" id="jumbo-bg" style="max-width: 850px;">
 				<div class="container-fluid py-5">
 					<h1 class="display-5 fw-bold">Bem Vindo!</h1>
 					<p class="col-md-8 fs-4">Use o menu abaixo para encontrar os melhores filmes de Terror!</p>
@@ -107,13 +118,14 @@
 						<h1>Filmes Encontrados</h1>
 
 						<!--Cartão Filme-->
-						<div class="card mb-3" style="max-width: 850px;">
+						<div class="card mb-3" style="max-width: 850px; background-image: url(https://image.tmdb.org/t/p/original/rr7E0NoGKxvbkb89eR1GwfoYjpA.jpg); background-color:rgba(0, 0, 0, 0.1); background-size: cover; color: white; background-color: black;">
+
 
 							<!--Parte Esquerda Cartao-->
 							<div class="row g-0">
 								<div class="col-md-4">
 									<img src="https://image.tmdb.org/t/p/w154/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg"
-										class="img-fluid rounded-start" alt="...">
+										class="img-fluid rounded-start" alt="..." style="filter: none;">
 								</div>
 
 								<!--Parte Direita Cartao-->
@@ -141,7 +153,6 @@
 							</div>
 						</div>
 					</div>
-
 				</div>
 			</div>
 		</div>
