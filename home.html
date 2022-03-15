@@ -13,6 +13,12 @@
 		.tudo_background {
 			background-color: #040303;
 		}
+
+		.form-select {
+			background-color: rgb(65, 58, 58);
+		}
+
+		;
 	</style>
 
 
@@ -27,7 +33,7 @@
 		<!-- NavBar -->
 		<nav class="navbar navbar-expand-lg navbar-dark  style=" background-color: #000000;">
 			<div class="container ">
-				<a class="navbar-brand text-danger" href="#"><strong>Melhores do Terror</strong></a>
+				<a class="navbar-brand mb-0  fs-2 text-danger" href="#"><strong>Melhores do Terror</strong></a>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
 					data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
 					aria-label="Toggle navigation">
@@ -36,8 +42,9 @@
 				<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 
 					<div class="navbar-nav">
-						<a class="nav-link active" aria-current="page" href="#">Home</a> <a class="nav-link"
-							href="#">Sobre</a> <a class="nav-link" href="#">Contato</a>
+						<a class="nav-link active" aria-current="page" href="#">Home</a>
+						<a class="nav-link" href="#">Sobre</a>
+						<a class="nav-link" href="#">Contato</a>
 						<a class="nav-link  href=" #">Doação</a>
 					</div>
 				</div>
@@ -46,60 +53,60 @@
 
 		<!-- Jumbotron -->
 		<div class="jumbotron" style="background-image: url(https://64.media.tumblr.com/tumblr_maolcpnQS61qakj1do1_500.gif); background-size: cover; background-position: center;
-		box-shadow: inset 0 0 180px #000;";>
-		<div class="container">
-			<div class="p-5 mb-4 rounded-3 text-light">
-				<div class="container-fluid py-5">
-					<h1 class="display-5 fw-bold">Bem Vindo!</h1>
-					<p class="col-md-8 fs-4">Use o menu abaixo para encontrar os melhores filmes de Terror!</p>
+		box-shadow: inset 0 0 180px #000;" ;>
+			<div class="container">
+				<div class="p-5 mb-4 rounded-3 text-light">
+					<div class="container-fluid py-5">
+						<h1 class="display-5 fw-bold">Bem Vindo!</h1>
+						<p class="col-md-8 fs-4">Use o menu abaixo para encontrar os melhores filmes de Terror!</p>
+					</div>
 				</div>
 			</div>
 		</div>
-		</div>
 
 		<!-- Pagina Inteira -->
-		<div class="container bg-dark text-light">
+		<div class="container text-light">
 			<div class="row">
 
 				<!-- Lateral esquerda -->
-				<div class="col-sm-4">
+				<div class="col-sm-4 bg-dark">
 					<h1>Menu</h1>
 
 					<div class="d-grid gap-3">
 
-					<!-- Genero -->
-					<select class="form-select" aria-label="Default select example">
-						<option selected>Tipo de filme de Terror</option>
-						<option value="1">💀 Terror</option>
-						<option value="2">🎃 Terror + Comédia</option>
-					</select>
+						<!-- Genero -->
+						<select class="form-select form-select-lg text-light" aria-label="Default select example">
+							<option selected>Tipo de filme de Terror</option>
+							<option value="1">💀 Terror</option>
+							<option value="2">🎃 Terror + Comédia</option>
+						</select>
 
-					<!-- Subgenero -->
-					<select class="form-select" aria-label="Default select example">
-						<option value="psychological">Sub-gênero do Filme</option>
-						<option value="psychological">🧠 Psicológico</option>
-						<option value="spirit">👤 Fantasmas</option>
-						<option value="vampire">🧛‍♂️ Vampiros</option>
-						<option value="monster">👹 Monstro</option>
-						<option value="possession">🔱 Possessão</option>
-						<option value="zombie">🧟‍♂️ Zumbis</option>
-						<option value="slasher">🔪 Slasher</option>
-						<option value="cult">🧿 Cultos</option>
-					</select>
+						<!-- Subgenero -->
+						<select class="form-select form-select-lg text-light" aria-label="Default select example">
+							<option value="psychological">Sub-gênero do Filme</option>
+							<option value="psychological">🧠 Psicológico</option>
+							<option value="spirit">👤 Fantasmas</option>
+							<option value="vampire">🧛‍♂️ Vampiros</option>
+							<option value="monster">👹 Monstro</option>
+							<option value="possession">🔱 Possessão</option>
+							<option value="zombie">🧟‍♂️ Zumbis</option>
+							<option value="slasher">🔪 Slasher</option>
+							<option value="cult">🧿 Cultos</option>
+						</select>
 
-					<!-- Data de Lançamento -->
-					<select class="form-select" aria-label="Default select example">
-						<option selected>Data de Lançamento</option>
-						<option value="1970">🎥 1970s</option>
-						<option value="1980">📼 1980s</option>
-						<option value="1990">💿 1990s</option>
-						<option value="2000">📀 2000s</option>
-						<option value="2010">📲 2010s</option>
-						<option value="2020">🥽 2020s</option>
-					</select>
+						<!-- Data de Lançamento -->
+						<select class="form-select form-select-lg text-light" aria-label="Default select example">
+							<option selected>Data de Lançamento</option>
+							<option value="1970">🎥 1970s</option>
+							<option value="1980">📼 1980s</option>
+							<option value="1990">💿 1990s</option>
+							<option value="2000">📀 2000s</option>
+							<option value="2010">📲 2010s</option>
+							<option value="2020">🥽 2020s</option>
+						</select>
 
-					<!-- Botão de Busca -->
-					<button type="button" class="btn btn-danger">Buscar</button>
+						<!-- Botão de Busca -->
+						<button type="button" class="btn btn-danger">Buscar</button>
 
 					</div>
 				</div>
@@ -109,7 +116,7 @@
 					<h1>Filmes Encontrados</h1>
 
 					<!--Cartão Filme-->
-					<div class="card mb-3" style="max-width: 850px; background-image: url(https://image.tmdb.org/t/p/w500/rr7E0NoGKxvbkb89eR1GwfoYjpA.jpg); background-color: rgba(0, 0, 0, 0.4);
+					<div class="card mb-3" style="max-width: 850px; background-image: url(https://image.tmdb.org/t/p/w500/jMBpJFRtrtIXymer93XLavPwI3P.jpg); background-color: rgba(0, 0, 0, 0.7);
 						background-blend-mode: darken;
 						/* filter: drop-shadow(0 0 0.75rem rgb(0, 0, 0)); */
 						background-position: center;
@@ -118,20 +125,26 @@
 
 						<!--Parte Esquerda Cartao-->
 						<div class="row g-0">
-							<div class="col-md-4 ">
-								<img src="https://image.tmdb.org/t/p/w154/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg"
+							<div class="col-md-3 ">
+								<img src="https://image.tmdb.org/t/p/w185/iVzIeC3PbG9BtDAudpwSNdKAgh6.jpg"
 									class="img-fluid rounded-start rounded mx-auto d-block" alt="...">
 							</div>
 
 							<!--Parte Direita Cartao-->
-							<div class="col-md-8">
+							<div class="col-md-9">
 								<div class="card-body">
 
 									<!--Titulo-->
-									<h5 class="card-title">Clube da Luta</h5>
+									<h2 class="card-title">Alien: o Oitavo Passageiro</h2>
 
 									<!--Subtitulo-->
-									<h6 class="card-subtitle mb-2 text-muted">Terror | Zumbis, Fantasmas | 1998</h6>
+									<h6 class="card-subtitle mb-2 text-white">Terror | Monstro, Ficção Cientifica | 1998
+									</h6>
+
+									<!--Nota-->
+									<div>
+										<h4><strong>8,4 </strong><span class="text-danger">★★★★☆</span></h4>
+									</div>
 
 									<!--Sinopse-->
 									<p class="card-text">A ticking-time-bomb insomniac and a slippery soap salesman
@@ -141,8 +154,16 @@
 										on, with underground \"fight clubs\" forming in every town, until an
 										eccentric gets
 										in the way and ignites an out-of-control spiral toward oblivion.</p>
-									<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small>
-									</p>
+
+										<!--Linha Inferior para Links-->
+									<div class="d-flex justify-content-between">
+										<!--Trailer e Critica IMDB-->
+										<a href="#" class="link-light">Trailer e Crítica</a>
+
+										<!--Onde Assistir TMDB-->
+										<a href="#" class="link-light">Onde assistir</a>
+
+									</div>
 								</div>
 							</div>
 						</div>
