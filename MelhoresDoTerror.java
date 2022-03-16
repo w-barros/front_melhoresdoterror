@@ -15,8 +15,6 @@ public class HomeController {
 	public String home(Model model) {
 		return "home";
 	}
-	
-	
 }
 
 //BuscaController
@@ -30,6 +28,19 @@ public class HomeController {
 		model.addAttribute("filmesEncontrados", filmesEncontrados);
 		return "busca";
 	}
-	
-	
 }
+
+//LoginController
+@Controller
+public class LoginController {
+	
+	@GetMapping
+	@RequestMapping("/login")
+	public String login() {
+		return "login";
+	}
+}
+
+
+//FilmeRepository
+
