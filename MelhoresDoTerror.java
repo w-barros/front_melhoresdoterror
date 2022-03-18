@@ -24,7 +24,11 @@ public class HomeController {
 	
 	@GetMapping
 	public String home(Model model) {
-		List<Filme> filmesEncontrados = filmeRepository.??????
+		
+		//Sort para os resultados
+		Sort sort = Sort.by("notaIMDB").descending;
+		
+		List<Filme> filmesEncontrados = filmeRepository.procuraPorGeneroSubgeneroData(Genero genero, Subgenero subgenero, LocalDate decada, So)
 		model.addAttribute("filmesEncontrados", filmesEncontrados);
 		return "busca";
 	}
@@ -43,4 +47,11 @@ public class LoginController {
 
 
 //FilmeRepository
+
+@Repository
+public interface FilmeRepository extends JpaRepository<Filme, Long> {
+	
+	List<Filme> procuraPorGeneroSubgeneroData(Genero genero, Subgenero subgenero, LocalDate decada)
+	
+}
 
