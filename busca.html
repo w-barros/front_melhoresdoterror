@@ -166,12 +166,17 @@
           <div class="col-sm-8">
             <h1>Filmes Encontrados</h1>
 
+            <!--Inicio do cartão do filme-->
+            <div th:each="filme : ${filmes}">
+
+
             <!--Cartão Filme-->
             <div
               class="card mb-3"
               style="
                 max-width: 850px;
-                background-image: url(https://image.tmdb.org/t/p/w500/jMBpJFRtrtIXymer93XLavPwI3P.jpg);
+                background-image: url(th:value="${filme.urlBackdrop}");
+               /* background-image: url(https://image.tmdb.org/t/p/w500/jMBpJFRtrtIXymer93XLavPwI3P.jpg); */
                 background-color: rgba(0, 0, 0, 0.7);
                 background-blend-mode: darken;
                 /* filter: drop-shadow(0 0 0.75rem rgb(0, 0, 0)); */
@@ -184,7 +189,8 @@
               <div class="row g-0">
                 <div class="col-md-3">
                   <img
-                    src="https://image.tmdb.org/t/p/w185/iVzIeC3PbG9BtDAudpwSNdKAgh6.jpg"
+                    th:src="${filme.urlPoster}"
+                    src=""
                     class="img-fluid rounded-start rounded mx-auto d-block"
                     alt="..."
                   />
@@ -194,23 +200,26 @@
                 <div class="col-md-9">
                   <div class="card-body">
                     <!--Titulo-->
-                    <h2 class="card-title">Alien: o Oitavo Passageiro</h2>
+                    <h2 class="card-title" th:text="filme.titulo">Alien: o Oitavo Passageiro</h2>
 
                     <!--Subtitulo-->
                     <h6 class="card-subtitle mb-2 text-white">
+                      <span th:text="${filme.genero}"></span>
+                      <span th:text="${filme.subgenero}"></span>
+                      <span th:text="${filme.anoDeLancamento}"></span>
                       Terror | Monstro, Ficção Cientifica | 1998
                     </h6>
 
                     <!--Nota-->
                     <div>
-                      <h4>
+                      <h4 th:value="${filme.nota_imdb}">
                         <strong>8,4 </strong
                         ><span class="text-danger">★★★★☆</span>
                       </h4>
                     </div>
 
                     <!--Sinopse-->
-                    <p class="card-text">
+                    <p th:text="${filme.descricao}" class="card-text">
                       A ticking-time-bomb insomniac and a slippery soap salesman
                       channel primal male aggression into a shocking new form of
                       therapy. Their concept catches on, with underground
@@ -222,15 +231,19 @@
                     <!--Linha Inferior para Links-->
                     <div class="d-flex justify-content-between">
                       <!--Trailer e Critica IMDB-->
-                      <a href="#" class="link-light">Trailer e Crítica</a>
+                      <a th:value="${filme.linkTrailer}" href="#" class="link-light">Trailer e Crítica</a>
 
                       <!--Onde Assistir TMDB-->
-                      <a href="#" class="link-light">Onde assistir</a>
+                      <a th:value="{$filme.linkOndeAssistir}" href="#" class="link-light">Onde assistir</a>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+
+            <!--Fim do cartão do filme-->
+          </div>
+
           </div>
         </div>
       </div>
