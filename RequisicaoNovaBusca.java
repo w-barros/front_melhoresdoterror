@@ -11,7 +11,7 @@ public class RequisicaoNovaBusca {
 	private String dataSelecionada;
 	
 	static LocalDate ano1970 = LocalDate.of(1970, 1, 1);
-	static LocalDate ano1979 = LocalDate.of(1970, 12, 31);
+	static LocalDate ano1979 = LocalDate.of(1979, 12, 31);
 	static LocalDate ano1980 = LocalDate.of(1980, 1, 1);
 	public String getGenero() {
 		return genero;

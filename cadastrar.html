@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      .tudo_background {
+        background-color: #040303;
+      }
+
+      .form-select {
+        background-color: rgb(65, 58, 58);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="tudo_background" style="min-height: 100vh">
+      <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"
+      ></script>
+
+      <!-- NavBar -->
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand text-danger" href="#"
+            ><strong>Melhores do Terror</strong>
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Sobre</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contato</a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link disabled"
+                  href="#"
+                  tabindex="-1"
+                  aria-disabled="true"
+                  >Minha Lista</a
+                >
+              </li>
+            </ul>
+            <!--Parte Direita Navbar-->
+            <form class="d-flex">
+              <button class="btn btn-outline-danger" type="submit">
+                Login
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Jumbotron -->
+      <div
+        class="jumbotron"
+        style="
+          background-image: url(https://64.media.tumblr.com/tumblr_maolcpnQS61qakj1do1_500.gif);
+          background-size: cover;
+          background-position: center;
+          box-shadow: inset 0 0 180px #000;
+        "
+        ;
+      >
+        <div class="container">
+          <div class="p-5 mb-4 rounded-3 text-light">
+            <div class="container-fluid py-5">
+              <h1 class="display-5 fw-bold">Bem Vindo!</h1>
+              <p class="col-md-8 fs-4">
+                Use o menu abaixo para encontrar os melhores filmes de Terror!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pagina Inteira -->
+      <div class="container text-light">
+        <div class="row">
+          <!-- Lateral esquerda -->
+          <div class="col-sm-4 bg-dark">
+            <h1>Menu</h1>
+
+            <div class="d-grid gap-3">
+              <!-- Formulario-->
+              <form
+                th:action="@{/cadastrar/novo}"
+                th:object="${requisicaoNovoFilme}"
+                metohd="post"
+              >
+                <!-- Genero -->
+
+                <!-- <div class="form-group">
+                  <select
+                    th:field="*{genero}"
+                    class="form-select form-select-lg text-light"
+                    aria-label="Default select example"
+                  >
+                    <option th:value="${null}" disabled>
+                      Tipo de filme de Terror
+                    </option>
+                    <option th:value="${horror}" value="terror">
+                      💀 Terror
+                    </option>
+                    <option th:value="${comedyHorror}" value="comedia">
+                      🎃 Terror + Comédia
+                    </option>
+                  </select>
+                </div> -->
+
+                <!-- Subgenero -->
+                <!-- <label for="subgenero">subgenero</label>
+                <select
+                  th:field="*{subgenero}"
+                  class="form-select form-select-lg text-light"
+                  aria-label="Default select example"
+                >
+                  <option th:value="${null}" disabled>
+                    Sub-gênero do Filme
+                  </option>
+                  <option th:value="${psychological}" value="psicologico">
+                    🧠 Psicológico
+                  </option>
+                  <option th:value="${ghosts}" value="espiritos">
+                    👤 Fantasmas
+                  </option>
+                  <option th:value="${vampires}" value="vampiros">
+                    🧛‍♂️ Vampiros
+                  </option>
+                  <option th:value="${monster}" value="monstro">
+                    👹 Monstro
+                  </option>
+                  <option th:value="${possession}" value="possessao">
+                    🔱 Possessão
+                  </option>
+                  <option th:value="${zombies}" value="zumbis">
+                    🧟‍♂️ Zumbis
+                  </option>
+                  <option th:value="${slasher}" value="slasher">
+                    🔪 Slasher
+                  </option>
+                  <option th:value="${cults}" value="culto">
+                    🧿 Cultos e Seitas
+                  </option>
+                </select> -->
+
+                <label for="genero">genero</label>
+                <input
+                  th:field="*{genero}"
+                  th:errorclass="is-invalid"
+                  class="form-control"
+                  placeholder="horror"
+                />
+
+                <label for="sugenero">subgenero</label>
+                <input
+                  th:field="*{subgenero}"
+                  th:errorclass="is-invalid"
+                  class="form-control"
+                  placeholder="zombies"
+                />
+
+                <!-- imdbId -->
+
+                <label for="imdbID">imdbID</label>
+                <input
+                  th:field="*{imdbID}"
+                  th:errorclass="is-invalid"
+                  class="form-control"
+                  placeholder="tt302893"
+                />
+
+                <!-- Botão de Busca -->
+                <button type="submit" value="submit" class="btn btn-success">
+                  Cadastrar
+                </button>
+
+                <!-- Fim do Formulario-->
+              </form>
+            </div>
+          </div>
+
+          <!--  Lateral direita -->
+          <div class="col-sm-8">
+            <h1>Filmes Encontrados</h1>
+
+            <!--Cartão Filme-->
+            <div
+              class="card mb-3"
+              style="
+                max-width: 850px;
+                background-image: url(https://image.tmdb.org/t/p/w500/jMBpJFRtrtIXymer93XLavPwI3P.jpg);
+                background-color: rgba(0, 0, 0, 0.7);
+                background-blend-mode: darken;
+                /* filter: drop-shadow(0 0 0.75rem rgb(0, 0, 0)); */
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+              "
+            >
+              <!--Parte Esquerda Cartao-->
+              <div class="row g-0">
+                <div class="col-md-3">
+                  <img
+                    src="https://image.tmdb.org/t/p/w185/iVzIeC3PbG9BtDAudpwSNdKAgh6.jpg"
+                    class="img-fluid rounded-start rounded mx-auto d-block"
+                    alt="..."
+                  />
+                </div>
+
+                <!--Parte Direita Cartao-->
+                <div class="col-md-9">
+                  <div class="card-body">
+                    <!--Titulo-->
+                    <h2 class="card-title">Alien: o Oitavo Passageiro</h2>
+
+                    <!--Subtitulo-->
+                    <h6 class="card-subtitle mb-2 text-white">
+                      Terror | Monstro, Ficção Cientifica | 1998
+                    </h6>
+
+                    <!--Nota-->
+                    <div>
+                      <h4>
+                        <strong>8,4 </strong
+                        ><span class="text-danger">★★★★☆</span>
+                      </h4>
+                    </div>
+
+                    <!--Sinopse-->
+                    <p class="card-text">
+                      A ticking-time-bomb insomniac and a slippery soap salesman
+                      channel primal male aggression into a shocking new form of
+                      therapy. Their concept catches on, with underground
+                      \"fight clubs\" forming in every town, until an eccentric
+                      gets in the way and ignites an out-of-control spiral
+                      toward oblivion.
+                    </p>
+
+                    <!--Linha Inferior para Links-->
+                    <div class="d-flex justify-content-between">
+                      <!--Trailer e Critica IMDB-->
+                      <a href="#" class="link-light">Trailer e Crítica</a>
+
+                      <!--Onde Assistir TMDB-->
+                      <a href="#" class="link-light">Onde assistir</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
